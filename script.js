@@ -94,3 +94,15 @@ window.addEventListener("load", () => {
     });
   }
 });
+// Ambil semua link di nav
+const navLinks = document.querySelectorAll("nav a");
+
+// Tambahkan event listener untuk klik
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    // Hapus class active di semua link
+    navLinks.forEach(l => l.classList.remove("active"));
+    // Tambahkan active di link yang diklik
+    link.classList.add("active");
+  });
+});

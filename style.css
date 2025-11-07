@@ -1,4 +1,5 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&display=swap');
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -44,15 +45,41 @@ nav ul {
 }
 
 nav a {
+  position: relative;
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  padding: 6px 0;
 }
 
-nav a:hover {
-  color: #89b5ff;
+/* Garis bawah — default hilang */
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: hsl(207, 100%, 68%);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
+
+/* Saat aktif karena diklik */
+nav a.active {
+  color: hsl(207, 100%, 68%);
+  text-shadow: 0 0 8px rgba(255, 223, 93, 0.6);
+}
+
+nav a.active::after {
+  width: 80%;
+}
+
 
 /* HERO */
 .hero {
