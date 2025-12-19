@@ -4,7 +4,7 @@ const quotes = [
   "Kesuksesan datang kepada mereka yang tidak menyerah.",
   "Kamu tidak perlu sempurna untuk bisa mulai.",
   "Langkah kecil hari ini adalah awal dari perubahan besar.",
-  "Belajar bukan tentang cepat, tapi tentang konsisten."
+  "Belajar bukan tentang cepat, tapi tentang konsisten.",  
 ];
 
 document.getElementById("motivateBtn").addEventListener("click", function() {
@@ -104,5 +104,19 @@ navLinks.forEach(link => {
     navLinks.forEach(l => l.classList.remove("active"));
     // Tambahkan active di link yang diklik
     link.classList.add("active");
+  });
+});
+// ===== HAMBURGER MENU =====
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+// Tutup menu setelah klik link (biar rapi)
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("show");
   });
 });
